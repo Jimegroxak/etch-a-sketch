@@ -1,5 +1,10 @@
+const content = document.querySelector(".content");
+const button = document.querySelector("button");
+button.addEventListener("click", onButtonClick);
+
 function CreateGrid(size) {
-    const grid = document.querySelector(".grid");
+    const grid = document.createElement("div");
+    grid.classList.toggle("grid");
 
     grid.addEventListener("mouseover", (MouseEvent) => {
             MouseEvent.target.style.backgroundColor = "purple";
@@ -16,6 +21,17 @@ function CreateGrid(size) {
         
         grid.appendChild(gridRow);
     }
+
+    content.appendChild(grid);
+}
+
+function onButtonClick() {
+    let newSize = prompt("Choose a new size for the grid (max 100):");
+    // prevent size from being greater than 100
+    newSize = Math.min(newSize, 100);
+    const grid = document.querySelector(".grid");
+    content.removeChild(grid);
+    CreateGrid(newSize);
 }
 
 CreateGrid(4);
