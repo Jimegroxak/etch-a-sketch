@@ -1,0 +1,26 @@
+.grid-cell {
+    border: black 1px solid;
+    flex: 1;
+    aspect-ratio: 1/1;
+}
+
+.grid-row {
+    flex: 1;
+    display: flex;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    margin: 10% 30%;
+    margin-top: 20px;
+}
+
+button {
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
