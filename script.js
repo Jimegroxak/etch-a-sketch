@@ -8,12 +8,17 @@ function CreateGrid(size) {
 
     grid.addEventListener("mouseover", (MouseEvent) => {
         const cell = MouseEvent.target;
-    
+
         if (!cell.style.backgroundColor) {
             const r = Math.floor(Math.random() * 255);
             const g = Math.floor(Math.random() * 255);
             const b = Math.floor(Math.random() * 255);
             cell.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            cell.style.opacity = 0.1;
+        } else {    
+            let opacity = parseFloat(cell.style.opacity);
+            opacity += 0.1;
+            cell.style.opacity = opacity;
         }
         
     });
