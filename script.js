@@ -7,8 +7,16 @@ function CreateGrid(size) {
     grid.classList.toggle("grid");
 
     grid.addEventListener("mouseover", (MouseEvent) => {
-            MouseEvent.target.style.backgroundColor = "purple";
-        });
+        const cell = MouseEvent.target;
+    
+        if (!cell.style.backgroundColor) {
+            const r = Math.floor(Math.random() * 255);
+            const g = Math.floor(Math.random() * 255);
+            const b = Math.floor(Math.random() * 255);
+            cell.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        }
+        
+    });
 
     for (let i = 0; i < size; i++) {
         const gridRow = document.createElement("div");
