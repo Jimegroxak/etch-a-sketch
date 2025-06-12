@@ -8,6 +8,7 @@ function CreateGrid(size) {
 
     grid.addEventListener("mouseover", (MouseEvent) => {
         const cell = MouseEvent.target;
+        if (cell === grid) return;
 
         if (!cell.style.backgroundColor) {
             const r = Math.floor(Math.random() * 255);
